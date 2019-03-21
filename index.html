@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<label>Product:</label>
+
+	<input type="text" name="" id="product"><br>
+
+	<label>Price:</label>
+
+	<input type="text" name="" id="price"><br>
+
+	<label>Quantity:</label>
+
+	<input type="text" name="" id="quantity"><br>
+
+	<button id="additem" class="btn btn-primary">ADD</button>
+
+	<table class="table table-bordered">
+
+		<thead>
+
+			<tr>
+
+				<th></th>
+
+				<th>Product</th>
+
+				<th>Price</th>
+
+				<th>Quantity</th>
+
+				<th>Total</th>
+
+			</tr>
+
+		</thead>
+
+		<tbody id="data">
+
+
+
+		</tbody>
+
+	</table>
+
+</div>
+
+<script type="text/javascript">
+
+	var id=1;
+
+	var btnadditem=document.getElementById('additem');
+
+	btnadditem.addEventListener('click',function(){
+
+		var content=document.getElementById('data');
+
+		
+
+		var product=document.getElementById('product').value;
+
+		var price=Number(document.getElementById('price').value);
+
+		var quantity=Number(document.getElementById('quantity').value);
+		var total=price*quantity;
+
+		var newentry="<tr>"+"<td>"+id+"</td>"+"<td>"+product+"</td>"+"<td>"+price+"</td>"+"<td>"+quantity+"</td>"+"<td>"+total+"</td>"+"</tr>";
+
+		content.insertAdjacentHTML('afterbegin',newentry);
+
+		id++;
+
+
+
+	});
+
+</script>
+
+</body>
+
+</html>
